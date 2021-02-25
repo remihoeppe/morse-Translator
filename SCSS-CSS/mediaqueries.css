@@ -1,0 +1,28 @@
+.below {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  textarea {
+    height: 20vh;
+  }
+
+  .below {
+    display: block;
+  }
+
+  .above {
+    display: none;
+  }
+
+  .btn__arrow--hideOnSmall {
+    display: none;
+  }
+}
+@media (min-width: 993px) {
+  .btn__arrow--hideOnLarge {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=mediaqueries.css.map */

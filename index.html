@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="SCSS-CSS/styles.css">
+  <link rel="stylesheet" href="SCSS-CSS/mediaqueries.css">
+
+  <title>My Morse Code</title>
+</head>
+<body>
+
+<div class="container-flex translator">
+
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h2 class="header">.... Morse Code Translator - - - </h2>
+    </div>
+
+    <div class="col-lg-5 align-self-center">
+      <h3>Text</h3>
+      <textarea placeholder="Type your text (all in lower case) here to translate it to Morse. ' ! ' + ' . ' + ' , ' are valid symbols." type="text" class="input" id="textInput"></textarea>
+    </div>
+
+    <div class="col-lg-2 align-self-center buttons">
+      <button id="btnEngToMorse" type="button" class="btn btn-success btn__radius--right">
+        <i class="fas fa-angle-up btn__arrow-up btn__arrow--hideOnLarge"></i>
+        Text to Morse
+        <i class="fas fa-angle-up btn__arrow-up btn__arrow--hideOnLarge"></i>
+        <i class="fas fa-angle-double-right btn__arrow--right btn__arrow--hideOnSmall"></i>
+      </button>
+
+      <button id="btnMorseToEng" type="button" class="btn btn-success btn__radius">
+        <i class="fas fa-angle-double-left btn__arrow--left btn__arrow--hideOnSmall"></i>
+        <i class="fas fa-angle-down btn__arrow--down btn__arrow--hideOnLarge"></i>
+        Morse to Text
+        <i class="fas fa-angle-down btn__arrow--down btn__arrow--hideOnLarge"></i>
+      </button>
+    </div>
+
+    <div class="col-lg-5 align-self-center">
+      <h3 class="above">Morse Code</h3>
+      <textarea placeholder="Type your Morse code here. Each character separated with a space and each word separated with ' / ' (space+slash+space)." type="text" class="input" id="morseInput"></textarea>
+      <h3 class="below">Morse</h3>
+    </div>
+  </div>
+
+</div>
+
+</body>
+<script type="module" src="JS/index.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

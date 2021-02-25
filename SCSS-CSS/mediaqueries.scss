@@ -1,0 +1,34 @@
+.below {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  textarea {
+    height: 20vh
+  }
+
+  .below {
+    display: block;
+  }
+  .above {
+    display: none;
+  }
+
+  .btn {
+    &__arrow {
+      &--hideOnSmall {
+      display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .btn {
+    &__arrow {
+      &--hideOnLarge {
+      display: none;
+      }
+    }
+  }
+}
