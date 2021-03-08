@@ -1,29 +1,33 @@
 // MORSE TO ENGLISH == DECODE
 // Decoding one single morse string into a letter
 
-import {alphabet} from './dictionnary.js';
+const decode = (letter, object) => {
+  if(!object.hasOwnProperty(letter)) {
+    throw new Error('This character/morse code is not in the dictionnary.');
+  }
 
-const decode = (letter) => {
-  let engTranslation = '';
+  // const engTranslation = Object.getOwnPropertyNames(object).find(key => object[key] === letter);
+  
+  // return engTranslation;
+  return object[letter];
+};
 
-  Object.getOwnPropertyNames(alphabet).some(key => {
-    if (alphabet[key] === letter) {
-    engTranslation = key;
-    return true;
-    }
-    });
-  return engTranslation;
-} 
+const decodeString = (morseCode, object) => {
+  if(typeof morseCode !== 'string') {
+    throw new Error ('This is an invalid input');
+  }
+  if(!object || object.constructor.name !== "Object") {
+    throw new Error ('The second argument is not an Object')
+  }
 
-const decodeString = (morseCode) => {
-  let morseWord = morseCode.split(" ");
-  let engWord = "";
+ const engWord =  morseCode.split(" ").map(morseLetter => decode(morseLetter, object)).join("")
 
-  for (let i = 0; i < morseWord.length; i++){
-    let engLetter = decode(morseWord[i]);
-    engWord = engWord.concat(engLetter);
-    }
-    return engWord;
+ return engWord;
 }
 
 export {decode, decodeString};
+
+// module.exports = {
+//   decode,
+//   decodeString
+// }

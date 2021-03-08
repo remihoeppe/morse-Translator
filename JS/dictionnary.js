@@ -86,3 +86,8 @@ const morse = {
 };
 
 export {alphabet, morse}
+
+// module.exports = {
+//   alphabet,
+//   morse
+// }

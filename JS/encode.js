@@ -1,32 +1,35 @@
 // ENGLISH TO MORSE  == ENCODE
 //Encoding one single letter into a morse string
 
-import {morse} from './dictionnary.js';
-
-const encode = (letter) => {
-  let morseTranslation = '';
+const encode = (letter, object) => {
+  if(!Object.keys(object).includes(letter)) {
+    throw new Error('This character/morse code is not in the dictionnary.')
+  }
+//  const morseTranslation = Object.getOwnPropertyNames(object).find(key => object[key] === letter)
   
-  Object.getOwnPropertyNames(morse).some(key => {
-    if (morse[key] === letter) {
-      morseTranslation = key;
-      return true;
-    }
-    });
-  return morseTranslation;
+  // return morseTranslation;
+  return object[letter];
+
 }
 
 // Encodes words (contained in a single string) into morse (contained in a single string) each morse letter separated with a space and each word separated by a /
-const encodeString = (textEng) => {
-  let morseWord = '';
 
+const encodeString = (textEng, object) => {
+  if(typeof textEng !== 'string') {
+    throw new Error ('This is an invalid input');
+  }
+  if(!object || object.constructor.name !== "Object") {
+    throw new Error ('The second argument is not an Object')
+  }
 
-  
-  for (let i = 0; i < textEng.length; i++) {
-    let letter = textEng.charAt(i)
-    let morseLetter = encode(letter)
-    morseWord = morseWord.concat(" ",morseLetter)
-    }
+  const morseWord = textEng.toLowerCase().split("").map(letter => encode(letter, object)).join(" ")
+
   return morseWord;
 }
 
 export {encode, encodeString};
+
+// module.exports = {
+//   encode, 
+//   encodeString
+// };
